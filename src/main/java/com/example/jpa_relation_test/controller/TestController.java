@@ -6,6 +6,8 @@ import com.example.jpa_relation_test.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class TestController {
@@ -24,10 +26,9 @@ public class TestController {
         testService.updateBook(book, bookStoreId, bookId);
     }
 
-    @GetMapping("/bookstore/{bookStoreId}/book/{bookId}")
-    public Book findBook(@PathVariable("bookStoreId") Long bookStoreId,
-                        @PathVariable("bookId") Long bookId) {
-        return testService.findBook(bookStoreId, bookId);
+    @GetMapping("/bookstore/{bookStoreId}/book")
+    public List<Book> findBook(@PathVariable("bookStoreId") Long bookStoreId) {
+        return testService.findBook(bookStoreId);
     }
 
     @PostMapping("/bookstore/{bookStoreId}/book/{bookId}")

@@ -24,7 +24,7 @@ Content-Type: application/json
 POST http://localhost:8080/bookstore/2/book/1
 
 ### 서울점 등록된 책 정보 확인 API
-GET http://localhost:8080/bookstore/1/book/1
+GET http://localhost:8080/bookstore/1/book
 
 ### 부산점 등록된 책 정보 확인 API
-GET http://localhost:8080/bookstore/2/book/1
+GET http://localhost:8080/bookstore/2/book

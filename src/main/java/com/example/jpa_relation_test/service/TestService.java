@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TestService {
@@ -27,9 +29,8 @@ public class TestService {
         // 구현
     }
     @Transactional
-    public Book findBook(Long bookStoreId, Long bookId) {
-        return bookRepository.findByBookStoreIdAndId(bookStoreId, bookId)
-                .orElseThrow();
+    public List<Book> findBook(Long bookStoreId) {
+        return bookRepository.findByBookStoreId(bookStoreId);
     }
 
     public void transferBook(Long bookId, Long bookStoreId) {
