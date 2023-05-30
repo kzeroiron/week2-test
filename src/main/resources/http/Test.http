@@ -20,8 +20,11 @@ Content-Type: application/json
     "stock" : 100
 }
 
-### 3. 서점에 책 등록 API
+### 3. 부산점에 책 등록 API
 POST http://localhost:8080/bookstore/2/book/1
 
-### 등록된 책 정보 확인 API
+### 서울점 등록된 책 정보 확인 API
 GET http://localhost:8080/bookstore/1/book/1
+
+### 부산점 등록된 책 정보 확인 API
+GET http://localhost:8080/bookstore/2/book/1

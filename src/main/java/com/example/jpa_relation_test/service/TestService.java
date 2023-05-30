@@ -27,7 +27,7 @@ public class TestService {
         // 구현
     }
     @Transactional
-    public Book getBook(Long bookStoreId, Long bookId) {
+    public Book findBook(Long bookStoreId, Long bookId) {
         return bookRepository.findByBookStoreIdAndId(bookStoreId, bookId)
                 .orElseThrow();
     }

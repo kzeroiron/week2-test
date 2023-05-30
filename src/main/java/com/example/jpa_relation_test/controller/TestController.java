@@ -25,9 +25,9 @@ public class TestController {
     }
 
     @GetMapping("/bookstore/{bookStoreId}/book/{bookId}")
-    public Book getBook(@PathVariable("bookStoreId") Long bookStoreId,
+    public Book findBook(@PathVariable("bookStoreId") Long bookStoreId,
                         @PathVariable("bookId") Long bookId) {
-        return testService.getBook(bookStoreId, bookId);
+        return testService.findBook(bookStoreId, bookId);
     }
 
     @PostMapping("/bookstore/{bookStoreId}/book/{bookId}")
