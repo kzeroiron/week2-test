@@ -24,6 +24,10 @@ public class TestService {
         memberRepository.save(member);
     }
 
+    public List<Member> findAllMember() {
+        return memberRepository.findAll();
+    }
+
     @Transactional
     public void updateBook(Book book, Long bookStoreId, Long bookId) {
         // 구현

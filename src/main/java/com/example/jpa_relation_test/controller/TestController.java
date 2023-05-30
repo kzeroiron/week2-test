@@ -19,6 +19,11 @@ public class TestController {
         testService.signup(member);
     }
 
+    @GetMapping("/member")
+    public List<Member> findAllMember() {
+        return testService.findAllMember();
+    }
+
     @PutMapping("/bookstore/{bookStoreId}/book/{bookId}")
     public void updateBook(@RequestBody Book book,
                            @PathVariable("bookStoreId") Long bookStoreId,
