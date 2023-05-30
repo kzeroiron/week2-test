@@ -26,4 +26,17 @@ public class Book {
 
     @ManyToOne
     private BookStore bookStore;
+
+    // 2번문제 답
+    public void update(Book book) {
+        this.title = book.getTitle();
+        this.author = book.getAuthor();
+        this.price = book.getPrice();
+        this.stock = book.getStock();
+    }
+
+    // 3번문제 답
+    public void updateBookStore(BookStore bookStore){
+        this.bookStore = bookStore;
+    }
 }

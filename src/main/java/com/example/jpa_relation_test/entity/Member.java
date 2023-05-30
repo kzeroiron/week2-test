@@ -15,9 +15,21 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // 문제 1번 해답
+    private String email;
+    private String password;
+    private String address;
+    private String phoneNumber;
+    private String nickname;
+
+    // 문제 5번 해답
     @ManyToOne
+    @JoinColumn(name = "sparta_store_id")
     private BookStore bookStore;
 
-    @ManyToMany
-    private List<Book> books = new ArrayList<>();
+//    @ManyToMany
+//    private List<Book> books = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Purchase> purchases = new ArrayList<>();
 }

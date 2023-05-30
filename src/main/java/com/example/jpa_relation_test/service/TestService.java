@@ -24,20 +24,31 @@ public class TestService {
         memberRepository.save(member);
     }
 
+    // 2번문제 답
     @Transactional
     public void updateBook(Book book, Long bookStoreId, Long bookId) {
-        // 구현
+        Book newBook = bookRepository.findByBookStoreIdAndId(bookStoreId, bookId)
+                .orElseThrow();
+        newBook.update(book);
     }
     @Transactional
     public List<Book> findBook(Long bookStoreId) {
         return bookRepository.findByBookStoreId(bookStoreId);
     }
 
+    @Transactional
     public void transferBook(Long bookId, Long bookStoreId) {
         Book book = bookRepository.findById(bookId)
                 .orElseThrow();
         BookStore bookStore = bookStoreRepository.findById(bookStoreId)
                 .orElseThrow();
         bookStore.addBook(book);
+
+        //문제 4번 해답
+        book.updateBookStore(bookStore);
+    }
+
+    public List<Member> findAllMember() {
+        return memberRepository.findAll();
     }
 }
